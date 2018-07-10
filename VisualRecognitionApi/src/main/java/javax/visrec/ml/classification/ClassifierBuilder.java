@@ -39,5 +39,5 @@ public abstract class ClassifierBuilder {
      * @param <T> the class used during the build method and parameterized type of the {@link Classifier}
      * @return {@link Classifier} object.
      */
-    public abstract <T> Classifier<T> buildWithSourceType(Class<T> cls);
+    public abstract <T, R> Classifier<T, R> buildWithSourceType(Class<T> cls, Class<R> ret);
 }

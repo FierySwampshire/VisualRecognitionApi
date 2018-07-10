@@ -12,12 +12,12 @@ import java.util.Map;
  * @param <T> The input type which is to be classified.
  * @since 1.0
  */
-public final class EnsambleClassifier<T> implements Classifier<T> {
+public final class EnsambleClassifier<T, R> implements Classifier<T, R> {
 
-    Map<String, Classifier<T>> classifiers = new HashMap<>();
+    Map<String, Classifier<T, R>> classifiers = new HashMap<>();
 
     @Override
-    public Map<String, Float> classify(T instance) {
+    public Map<R, Float> classify(T instance) {
         classifiers.values().stream() // or parallelStream
                 .forEach(c -> c.classify(instance));
         //.collect(); // get average scores? This method can be overriden, provide default impl here
