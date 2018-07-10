@@ -17,5 +17,5 @@ public interface ClassifierService {
      * @param <T> the class which is able to be handled by the {@link Classifier} and given as {@link Class} object.
      * @return {@link Classifier} which is able to classify images of {@code T}
      */
-    <T> Classifier<T> getBySource(Class<T> sourceType);
+    <T, R> Classifier<T, R> getBySource(Class<T> sourceType, Class<R> retType);
 }
